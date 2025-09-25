@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{4B336A79-A4E5-49E9-A34B-F2F2BFA195F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter_Basic", "Adapter\Adapter_Basic.csproj", "{4B336A79-A4E5-49E9-A34B-F2F2BFA195F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composite", "Composite\Composite.csproj", "{B5EF28FF-05BB-4A6E-9E3C-B4BA16B5DC9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter_Client", "Adapter_Client\Adapter_Client.csproj", "{17BE3949-90BC-441F-9B7D-9D2DC909CB10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B5EF28FF-05BB-4A6E-9E3C-B4BA16B5DC9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5EF28FF-05BB-4A6E-9E3C-B4BA16B5DC9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5EF28FF-05BB-4A6E-9E3C-B4BA16B5DC9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BE3949-90BC-441F-9B7D-9D2DC909CB10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BE3949-90BC-441F-9B7D-9D2DC909CB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BE3949-90BC-441F-9B7D-9D2DC909CB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BE3949-90BC-441F-9B7D-9D2DC909CB10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
