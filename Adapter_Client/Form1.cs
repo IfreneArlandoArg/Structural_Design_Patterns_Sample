@@ -36,6 +36,21 @@ namespace Adapter_Client
             comboBoxTipoTarjeta.Items.Add(TipoTarjeta.Debito);
             comboBoxTipoTarjeta.SelectedIndex = 0;
 
+
+
+            comboBoxBanco.Items.Add("Banco Galicia");
+            comboBoxBanco.Items.Add("Banco Santander");
+            comboBoxBanco.Items.Add("Banco Macro");
+            comboBoxBanco.Items.Add("Banco Nación");
+            comboBoxBanco.SelectedIndex = 0;
+
+
+            comboBoxMonedero.Items.Add("Mercado Pago");
+            comboBoxMonedero.Items.Add("Ualá");
+            comboBoxMonedero.Items.Add("PayPal");
+            comboBoxMonedero.SelectedIndex = 0;
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -46,7 +61,7 @@ namespace Adapter_Client
 
             InitializeComboBoxes();
 
-
+            
 
         }
 
@@ -59,27 +74,82 @@ namespace Adapter_Client
         {
             try
             {
-                if(comboxModoPago.Items.Count > 0) 
-                { 
+                if (comboxModoPago.Items.Count > 0)
+                {
+                    
+                    groupBoxPagoTarjeta.Visible = false;
+                    groupBoxMonedero.Visible = false;
+
                     
                     switch ((ModoPago)comboxModoPago.SelectedItem)
                     {
                         case ModoPago.Tarjeta:
                             groupBoxPagoTarjeta.Visible = true;
                             break;
-                            
-                        default:
-                            groupBoxPagoTarjeta.Visible = false;
+                        case ModoPago.MonederoElectronico:
+                            groupBoxMonedero.Visible = true;
                             break;
                     }
-
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void mostrarPagos()
+        {
+            listBoxPagos.Items.Clear();
+            foreach (var pago in paymentManager.Pagos)
+            {
+                listBoxPagos.Items.Add(pago.ToString());
+            }
+        }
+
+        private void btnPagarMonedero_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IPago pago = new MonederoElectronicoAdapter((string)comboBoxMonedero.SelectedItem);
+                pago.Pagar((double)numericUpDownMonedero.Value);
+                paymentManager.AgregarPago(pago);
+
+
+                mostrarPagos();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnPagarBanco_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IPago pago = new PagoConTarjeta((string)comboBoxBanco.SelectedItem)
+                {
+                    Marca = (MarcaTarjeta)comboBoxMarcaTarjeta.SelectedItem,
+                    Tipo = (TipoTarjeta)comboBoxTipoTarjeta.SelectedItem
+                };
+                pago.Pagar((double)numericUpDownBanco.Value);
+                paymentManager.AgregarPago(pago);
+
+                mostrarPagos();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Adapter_Client
     {
         public Usuario usuario { get; set; }
 
-        List<IPago> Pagos { get;  }
+        public List<IPago> Pagos { get;  }
 
 
         public PaymentManager(Usuario pUsuario)
