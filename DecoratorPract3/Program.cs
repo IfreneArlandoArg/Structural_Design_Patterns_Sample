@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Decorator_Pract_2
+namespace DecoratorPract3
 {
     internal class Program
     {
@@ -12,19 +12,12 @@ namespace Decorator_Pract_2
         {
             IMensaje mensaje = new MensajeTexto();
 
-
-
             mensaje = new MensajeConFecha(mensaje);
-
-           
-
-
             mensaje = new MensajeConFirma(mensaje);
-
             mensaje = new MensajeEncriptado(mensaje);
 
-            mensaje.Enviar("Hola mundo desde el patrón Decorator - Práctica 2!");
 
+            mensaje.Enviar("Hola mundo desde el patrón Decorator - Práctica 3!");
         }
     }
 }
