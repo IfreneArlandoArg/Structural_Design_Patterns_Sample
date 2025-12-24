@@ -7,15 +7,15 @@
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Adapter.PayPal" Collapsed="true">
+  <Class Name="Adapter.PayPal">
     <Position X="1.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IPago.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Adapter.PayPalAdapter" Collapsed="true">
-    <Position X="2.25" Y="3.75" Width="1.5" />
+  <Class Name="Adapter.PayPalAdapter">
+    <Position X="5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>IPago.cs</FileName>
